@@ -7,7 +7,10 @@ app.set('view engine', 'ect');
 app.engine('ect', ectRenderer.render);
 
 app.get('/', function (req, res){
-    res.render('index');
+  var params = {
+    title : "Express3 + ECT + Backbone.js"
+  }
+  res.render('index', params);
 });
 
 app.listen(3251);
