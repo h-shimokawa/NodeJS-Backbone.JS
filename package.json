@@ -1,0 +1,25 @@
+{
+  "name": "NodeJS-Backbone.JS",
+  "version": "0.0.0",
+  "description": "NodeJS-Backbone.JS ==================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/h-shimokawa/NodeJS-Backbone.JS.git"
+  },
+  "author": "hs",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/h-shimokawa/NodeJS-Backbone.JS/issues"
+  },
+  "dependencies": {
+    "express": "*",
+    "config":"*",
+    "async":"*",
+    "moment" : "*",
+    "ect" : "*"
+  }
+}
