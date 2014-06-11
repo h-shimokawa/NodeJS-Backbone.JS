@@ -24,16 +24,12 @@ app.get('/getNews', function(req, res){
   var request = require('request');
   var url = 'http://news.yahooapis.jp/NewsWebService/V2/topics?';
   url    += util.format('appid=%s&query=%s&category=domestic', config.app_id, querystring.escape(keyWord));
-  
+  console.log(url);
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      var data   = parser.toJson(body, {object: true});
+      var data   = parser.toJson(body, {object:true});
       res.contentType('json');
-      res.send(
-        {
-          data: data.ResultSet.Result || [],
-        }
-      );
+      res.send(data.ResultSet.Result || []);
       console.log(data.ResultSet.Result);
     } else {
       res.send(response.statusCode);

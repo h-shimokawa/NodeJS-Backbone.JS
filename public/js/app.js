@@ -22,20 +22,17 @@ $(function(){
         this.collection
         .fetch({data:{keyWord:query}})
         .then(function(res){
-          _.each(res.data, function(val) {
-            self.collection.add(val);
-          });
-        })
-        .then(function(){
-          self.render();
+        	self.render();
         })
       }
     },
     render : function(event){
       var self = this;
       this.collection.each(function(news){
-        self.$newsList.append($("<li/>").html(news.get("Overview")));
-      });
+      	var a = $("<a/>");
+      	$(a).attr("href", news.get('Url')).attr("target", "_blank").html(news.get('Overview'));
+        self.$newsList.append($("<li/>").html($(a)));
+      }, this);
     }
   })
   var newsView = new NewsView();
